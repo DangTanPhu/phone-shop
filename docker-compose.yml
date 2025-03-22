@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:latest
+    container_name: my_node_app
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb+srv://tanphu7:Ducphu777%40@cluster0.hvsbb.mongodb.net/phoneshopDB?retryWrites=true&w=majority
+    command: ["npm", "start"]
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb_container
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=tanphu7
+      - MONGO_INITDB_ROOT_PASSWORD=Ducphu777%40
+
+volumes:
+  mongo_data:
