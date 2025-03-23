@@ -1,0 +1,140 @@
+.supplierManagement {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #f4f7ff; /* Light, soothing background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 30px;
+  color: #1e2952; /* Deep blue for emphasis */
+  margin-bottom: 25px;
+  border-bottom: 3px solid #cfd8e3;
+  padding-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.supplierForm {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.supplierForm input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d4de;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border 0.3s ease;
+}
+
+.supplierForm input:focus {
+  border: 1px solid #1e88e5; /* Focus state color */
+  outline: none;
+}
+
+.supplierForm button {
+  background-color: #00796b; /* Rich teal */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.supplierForm button:hover {
+  background-color: #005b4f;
+  transform: translateY(-2px);
+}
+
+.supplierTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.supplierTable th,
+.supplierTable td {
+  padding: 15px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e4e7eb;
+  font-size: 16px;
+}
+
+.supplierTable th {
+  background-color: #eef2f9; /* Light blue-gray */
+  font-weight: bold;
+  color: #2d3a50;
+  text-transform: uppercase;
+}
+
+.supplierTable tr:last-child td {
+  border-bottom: none;
+}
+
+.supplierTable button {
+  margin-right: 6px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.supplierTable button:first-of-type {
+  background-color: #0288d1; /* Blue for edit */
+  color: white;
+}
+
+.supplierTable button:first-of-type:hover {
+  background-color: #0277bd;
+  transform: translateY(-2px);
+}
+
+.supplierTable button:last-of-type {
+  background-color: #d32f2f; /* Red for delete */
+  color: white;
+}
+
+.supplierTable button:last-of-type:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .supplierManagement {
+    padding: 24px;
+  }
+
+  .supplierForm {
+    grid-template-columns: 1fr;
+  }
+
+  .supplierTable {
+    font-size: 15px;
+  }
+
+  .supplierTable th,
+  .supplierTable td {
+    padding: 10px 12px;
+  }
+
+  .supplierTable button {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+}

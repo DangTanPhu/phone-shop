@@ -119,3 +119,12 @@ exports.sendOrderConfirmationEmail = async (email, order, invoice) => {
     throw error;
   }
 };
+(async () => {
+    try {
+      await exports.sendResetPasswordEmail('phudt777@gmail.com', 'https://example.com/reset');
+      console.log("✅ Email test sent successfully!");
+    } catch (error) {
+      console.error("❌ Failed to send email:", error);
+    }
+  })();
+  

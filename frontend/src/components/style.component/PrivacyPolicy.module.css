@@ -1,0 +1,68 @@
+.privacyPolicy {
+    max-width: 800px;
+    margin: 40px auto; /* Tăng khoảng cách trên dưới */
+    padding: 30px; /* Tăng khoảng cách nội dung bên trong */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Thay đổi font cho hiện đại hơn */
+    line-height: 1.8; /* Tăng khoảng cách dòng */
+    background-color: #ffffff; /* Sử dụng màu trắng để tạo cảm giác sạch */
+    border-radius: 12px; /* Tăng độ bo góc */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Tăng độ mờ cho bóng */
+    color: #333; /* Đặt màu chữ cho toàn bộ */
+  }
+  
+  .privacyPolicy h1 {
+    text-align: center;
+    font-size: 2.8rem; /* Tăng kích thước tiêu đề */
+    color: #f50303; /* Thay đổi màu để không quá tương phản */
+    margin-bottom: 30px; /* Tăng khoảng cách dưới tiêu đề */
+    font-weight: bold; /* Tăng độ đậm của chữ */
+  }
+  
+  .privacyPolicy section {
+    margin-bottom: 25px; /* Tăng khoảng cách giữa các section */
+    background-color: #f5f5f5; /* Màu nền nhẹ nhàng cho các section */
+    padding: 20px; /* Tăng khoảng cách nội dung bên trong section */
+    border-radius: 10px; /* Độ bo góc mềm mại */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Bóng mềm hơn */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng khi di chuột */
+  }
+  
+  /* Hiệu ứng khi hover vào section */
+  .privacyPolicy section:hover {
+    transform: translateY(-5px); /* Nâng section lên khi di chuột */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bóng mạnh hơn khi hover */
+  }
+  
+  .privacyPolicy h2 {
+    font-size: 2rem; /* Tăng kích thước tiêu đề phụ */
+    color: #0056b3; /* Màu xanh đậm hơn để thu hút sự chú ý */
+    margin-bottom: 12px; /* Tăng khoảng cách dưới tiêu đề phụ */
+    border-bottom: 2px solid #007bff; /* Đường viền nhỏ dưới tiêu đề phụ */
+    padding-bottom: 8px; /* Thêm khoảng cách phía dưới tiêu đề phụ */
+  }
+  
+  .privacyPolicy p {
+    font-size: 1.1rem; /* Tăng kích thước chữ */
+    color: #666; /* Màu chữ mềm hơn để dễ đọc */
+    margin: 12px 0; /* Tăng khoảng cách trên dưới giữa các đoạn văn */
+    line-height: 1.8; /* Tăng khoảng cách dòng cho dễ đọc */
+  }
+  
+  .privacyPolicy p:last-child {
+    margin-bottom: 0; /* Loại bỏ khoảng cách dưới cùng của đoạn văn cuối cùng */
+  }
+  
+  /* Thêm style cho các liên kết (nếu có) */
+  .privacyPolicy a {
+    color: #007bff; /* Màu xanh cho liên kết */
+    text-decoration: none; /* Bỏ gạch chân liên kết */
+    border-bottom: 1px dashed #007bff; /* Đường gạch dưới nét đứt */
+    transition: color 0.3s ease; /* Hiệu ứng mượt khi đổi màu */
+  }
+  
+  /* Hiệu ứng khi hover vào liên kết */
+  .privacyPolicy a:hover {
+    color: #0056b3; /* Đổi màu khi hover */
+    border-bottom-color: #0056b3; /* Đổi màu nét gạch dưới khi hover */
+  }
+  

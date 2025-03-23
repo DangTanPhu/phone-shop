@@ -1,0 +1,121 @@
+.statisticsContainer {
+  padding: 2rem;
+  background-color: #1e1e2f; /* Darker background for a sleek look */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0; /* Light text for better contrast */
+}
+
+.title {
+  font-size: 2rem;
+  color: #00d4ff; /* Neon blue for futuristic touch */
+  margin-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dateControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dateControls input,
+.dateControls select {
+  padding: 10px;
+  border: 1px solid #3a3a4e;
+  border-radius: 6px;
+  background: #2a2a3c; /* Dark input background */
+  color: #e0e0e0;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  
+}
+
+.dateControls input:focus,
+.dateControls select:focus {
+  border-color: #00c0ff; /* Focus color to match the theme */
+  outline: none;
+  background: #1c1c2a;
+  
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #27273e; /* Dark card background */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #ff4dc4; /* Vibrant pink for visual interest */
+  margin-bottom: 1rem;
+}
+
+.statCard h3 {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.statCard p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ffb3; /* Bright green for strong emphasis */
+}
+
+.chartContainer {
+  background-color: #27273e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.chartContainer h3 {
+  font-size: 1.5rem;
+  color: #00c0ff;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.error {
+  color: #ff4c4c; /* Bright red for error messages */
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dateControls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

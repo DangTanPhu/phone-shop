@@ -1,0 +1,249 @@
+/* General Product Management Section */
+.productManagement {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Ensures the content doesn't exceed the screen size */
+  box-sizing: border-box;
+}
+
+/* Title Section */
+.productManagement h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #343a40;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Search Bar Section */
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #f7f9fc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.searchBar input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #fff;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.searchBar input:focus {
+  border-color: #007bff;
+}
+
+.searchBar input::placeholder {
+  color: #888;
+}
+
+/* Product Table Styling */
+.productTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Headers */
+.productTable th, .productTable td {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  color: #495057;
+  border-bottom: 1px solid #e0e0e0;
+  word-wrap: break-word;
+}
+
+/* Table Header Hover */
+.productTable th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.productTable th:hover {
+  background-color: #e9ecef;
+}
+
+/* Table Input Styling */
+.productTable input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f8f9fa;
+  transition: border 0.3s ease;
+}
+
+.productTable input:focus {
+  border-color: #007bff;
+}
+
+/* Button Styles (Edit, Delete, Save, Cancel) */
+.editButton, .deleteButton, .saveButton, .cancelButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.editButton {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.saveButton {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.cancelButton {
+  background-color: #6c757d;
+  color: #ffffff;
+  padding-top: 0px;
+  padding-bottom: 0;
+  height: 40px;
+  margin-top: auto;   
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+.saveButton:hover {
+  background-color: #218838;
+}
+
+.cancelButton:hover {
+  background-color: #5a6268;
+  
+  
+}
+
+/* Pagination Section */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* Loading and Error Messages */
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .productManagement {
+    padding: 15px;
+  }
+
+  .productManagement h2 {
+    font-size: 20px;
+  }
+
+  .searchBar {
+    padding: 10px;
+  }
+
+  .productTable th, .productTable td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .pagination button {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .productManagement {
+    padding: 10px;
+  }
+
+  .productManagement h2 {
+    font-size: 18px;
+  }
+
+  .productTable th, .productTable td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .editButton, .deleteButton, .saveButton, .cancelButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

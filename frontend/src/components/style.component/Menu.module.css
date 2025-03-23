@@ -1,0 +1,90 @@
+.menuWrapper {
+    position: absolute;
+    top: 110px; /* 60px cho header + 50px cho divider */
+    left: 0;
+    width: 300px; /* Chiều rộng cố định cho menu */
+    max-height: calc(100vh - 110px); /* Chiều cao tối đa */
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transform: translateX(-100%); /* Ẩn menu ban đầu */
+    transition: transform 0.3s ease-in-out 0.1s; /* Giữ delay 0.1s */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+
+.menuWrapper.open {
+    transform: translateX(0); /* Hiện menu khi mở */
+}
+
+.menuOverlay {
+    padding: 20px;
+    height: 100%; /* Đảm bảo overlay lấp đầy toàn bộ chiều cao của wrapper */
+    overflow-y: auto; /* Cho phép cuộn trong menu nếu nội dung dài */
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.categoryItem {
+    margin-bottom: 10px;
+}
+
+.categoryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.categoryLink {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.toggleIndicator {
+    font-size: 12px;
+}
+
+.subcategoryList {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.subcategoryLink {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.subcategoryLink:hover {
+    color: #000;
+}
+
+/* Thêm style cho danh mục đặc biệt */
+.categoryTitle[data-category="SALE"] {
+    color: red;
+}
+
+@media (max-width: 768px) {
+  .menuWrapper {
+    width: 100%;
+    top: 50px;
+  }
+}

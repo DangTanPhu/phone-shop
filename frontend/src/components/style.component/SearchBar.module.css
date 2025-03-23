@@ -1,0 +1,102 @@
+.searchBar {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+  }
+  
+  .searchInputWrapper {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .searchIcon {
+    color: #000;
+    font-size: 20px;
+    margin-right: 15px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: transparent;
+  }
+  
+  .searchInput::placeholder {
+    color: #999;
+  }
+  
+  .clearButton,
+  .closeButton {
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 20px;
+  }
+  
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0 20px;
+  }
+  
+  .suggestions li {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .suggestions li:hover {
+    background: #f9f9f9;
+  }
+  
+  .suggestions img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .suggestions div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .suggestions span:first-child {
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .suggestions span:last-child {
+    font-size: 13px;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .searchBar {
+      padding: 15px;
+    }
+    
+    .suggestions {
+      padding: 0 15px;
+    }
+  }

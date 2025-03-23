@@ -1,0 +1,173 @@
+/* Category Management Container */
+.categoryManagement {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h2 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Error & Success Messages */
+.error,
+.success {
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.error {
+  background-color: #ffe0e0;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.success {
+  background-color: #e0f7fa;
+  color: #00796b;
+  border: 1px solid #80cbc4;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+/* Input Fields & Select */
+input,
+select {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+/* Button */
+.button {
+  background-color: #1976d2;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+}
+
+.button:hover {
+  background-color: #1565c0;
+}
+
+/* Category List Container */
+.categoryListContainer {
+  background-color: #fafafa;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Category List Header */
+.categoryListContainer h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+
+/* Category List Items */
+.categoryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.categoryItem:hover {
+  background-color: #e3f2fd;
+}
+
+.categoryName {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Delete Button */
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .categoryManagement {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryManagement {
+    padding: 25px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .categoryItem {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
