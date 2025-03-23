@@ -1,94 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-body {
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+/* Định nghĩa style cho trang đăng nhập */
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .loginContainer {
+    display: flex;
+    width: 80%;
+    /* max-width: 1000px; */
+    max-width: 520px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .loginImage {
+    flex: 1;
+    background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1470&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    position: relative;
+  }
+  
+  .loginImage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+  
+  .loginForm {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .formHeader {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .loginTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .loginSubtitle {
+    text-align: center ;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .errorMessage {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .inputGroup {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 120%;
+    padding: 12px 40px 12px 40px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #4f46e5;
+  }
+  
+  .inputGroup .inputIcon {
+    position: absolute;
+    left: 12px;
+    top: 20px ;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(127,255,172);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.container {
-    background-color: #fff;
-    border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    position: relative;
-    width: 400px;
-    padding: 40px;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginButton:hover {
+    background-color: rgb(127,255,172);
+  }
+  
+  .divider {
     text-align: center;
-}
-
-.container h1 {
-    font-size: 24px;
+    margin: 20px 0;
+    position: relative;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .divider::before {
+    left: 0;
+  }
+  
+  .divider::after {
+    right: 0;
+  }
+  
+  .divider span {
+    background-color: white;
+    padding: 0 10px;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .socialLogin {
+    display: flex;
+    gap: 10px;
     margin-bottom: 20px;
-}
-
-.container p {
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 20px 0;
-}
-
-.container span {
-    font-size: 12px;
-}
-
-.container a {
-    color: #333;
-    font-size: 13px;
-    text-decoration: none;
-    margin: 15px 0 10px;
-    display: block;
-}
-
-.container button {
-    background-color: #512da8;
-    color: #fff;
-    font-size: 14px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-}
-
-.container button:hover {
-    background-color: #3e1e93;
-}
-
-.container input {
-    background-color: #eee;
-    border: none;
-    margin: 10px 0;
+  }
+  
+  .socialButton {
+    flex: 1;
     padding: 12px;
-    font-size: 14px;
+    border: none;
     border-radius: 8px;
-    width: 100%;
-    outline: none;
-}
-
-.social-icons {
-    margin: 20px 0;
-}
-
-.social-icons a {
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    margin: 0 5px;
-    width: 40px;
-    height: 40px;
-}
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .googleButton {
+    background-color: #ea4335;
+    color: white;
+  }
+  
+  .googleButton:hover {
+    background-color: #d33426;
+  }
+  
+  .facebookButton {
+    background-color: #1877f2;
+    color: white;
+  }
+  
+  .facebookButton:hover {
+    background-color: #166fe5;
+  }
+  
+  .loginFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .footerLink {
+    color: #4f46e5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.3s ease;
+  }
+  
+  .footerLink:hover {
+    color: #4338ca;
+  }
+  
+  .buttonIcon {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .loginContainer {
+      width: 95%;
+      flex-direction: column;
+    }
+  
+    .loginImage {
+      display: none;
+    }
+  
+    .loginForm {
+      padding: 30px;
+    }
+  }
+  

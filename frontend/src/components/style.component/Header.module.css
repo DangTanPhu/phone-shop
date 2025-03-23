@@ -1,113 +1,349 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-.topBar {
-    background-color: #333;
-    color: white;
-    padding: 5px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-}
-
-.socialIcons a {
-    color: white;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 16px;
-}
-
+/* Định nghĩa style cho header */
 .header {
-    background: #f0f0f0;
-    padding: 15px 20px;
+  /* Đặt vị trí tương đối cho header */
+  position: relative;
+  /* Chiều cao cố định cho header */
+  height: 60px;
+  /* Đặt z-index cao để header luôn hiển thị trên cùng */
+  z-index: 1000;
+  /* Màu nền trắng cho header */
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
 }
 
+/* Định nghĩa style cho wrapper bên trong header */
 .headerWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* Sử dụng flexbox để sắp xếp các phần tử con */
+  display: flex;
+  /* Căn các phần tử con ra hai bên */
+  justify-content: space-between;
+  /* Căn giữa các phần tử con theo chiều dọc */
+  align-items: center;
+  /* Chiều cao 100% của header */
+  height: 100%;
+  /* Thêm padding hai bên */
+  padding: 0 20px;
+  position: relative;
 }
 
-.logoWrapper img {
+/* Định nghĩa style chung cho phần bên trái và phải của header */
+.leftSection, .rightSection {
+  /* Cho phép các phần mở rộng để lấp đầy không gian */
+  flex: 0 0 auto;
+  /* Sử dụng flexbox */
+  display: flex;
+  /* Căn giữa các phần tử con theo chiều dọc */
+  align-items: center;
+}
+
+/* Định nghĩa style cho phần giữa của header */
+.centerSection {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Định nghĩa style cho logo */
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  width: 150px; /* Điều chỉnh kích thước phù hợp với logo của bạn */
+  height: 60px;
+/* background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="UTF-8"%3F%3E%3C!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"%3E%3Csvg enable-background="new 0 0 276.5 79" version="1.1" viewBox="0 0 276.5 79" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="m83.067 39.757c0 22.041-17.028 35.246-37.976 35.246-20.937 0.01-37.976-13.194-37.976-35.235 0-21.579 17.114-35.599 37.965-35.609 20.862 0 37.978 14.018 37.987 35.598m-50.817 0.375c0 7.829 5.28 13.205 12.841 13.205 7.561-0.01 12.841-5.376 12.83-13.205 0-7.293-4.916-13.387-12.83-13.387-7.924 0-12.841 6.104-12.841 13.387" fill="%23181819"/%3E%3Cpath d="m86.877 5.251 29.056-0.011c13.29 0 26.859 3.18 26.87 19.031 0 6.008-3.01 11.93-9.018 13.837v0.546c7.464 2.645 12.198 8.107 12.198 16.3 0.011 14.115-13.109 18.945-25.125 18.945l-33.969 0.011-0.012-68.659zm25.415 26.399c3.642 0 7.744-0.365 7.744-5.109 0-5.098-4.648-4.722-8.29-4.722h-1.735l0.011 9.831h2.27zm-2.271 25.863h2.827c4.091 0 10.014-0.096 10.014-5.74 0-5.74-6.373-5.644-10.389-5.644h-2.452v11.384z" fill="%23181819"/%3E%3Cpolygon points="149.71 5.237 195.88 5.226 195.89 23.979 174.85 23.99 174.86 30.544 194.07 30.544 194.07 48.386 174.86 48.397 174.86 55.133 196.62 55.133 196.62 73.886 149.72 73.896" fill="%23181819"/%3E%3Cpath d="m227.75 5.22 7.646 17.939h0.738c0.729-2.185 1.36-4.37 2.271-6.468l4.916-11.471 28.049-0.01-23.486 39.069v29.601h-24.396l-0.011-29.591-23.959-39.069h28.232z" fill="%23181819"/%3E%3C/svg%3E'); */
+  background-image: url('https://i.imgur.com/jrgeQEy.jpeg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Định nghĩa style cho nút menu */
+.menuButton, .searchButton {
+  /* Loại bỏ background */
+  background: none;
+  /* Loại bỏ viền */
+  border: none;
+  /* Thay đổi con trỏ khi di chuột qua */
+  cursor: pointer;
+  /* Thêm padding cho nút */
+  padding: 5px;
+  /* Kích thước chữ cho nút */
+  font-size: 1.2rem;
+}
+
+/* Định nghĩa style cho icon menu */
+.menuIcon {
+  /* Chiều rộng cố định cho icon */
+  width: 100%;
+  /* Chiều cao cố định cho icon */
+  height: 100%;
+  /* Sử dụng object-fit để giữ tỷ lệ hình ảnh */
+  object-fit: contain;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Định nghĩa style cho các link icon */
+.iconLink {
+  /* Màu chữ đen cho link */
+  color: #000;
+  /* Loại bỏ gạch chân cho link */
+  text-decoration: none;
+  /* Thêm margin trái cho link */
+  margin-left: 1rem;
+  /* Kích thước chữ cho link */
+  font-size: 1.2rem;
+}
+
+/* Các styles khác giữ nguyên */
+
+.rightLinks {
+  display: flex;
+  align-items: center;
+}
+
+.signInLink, .bagLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  margin-left: 20px;
+text-transform: uppercase;
+}
+
+.bagLink {
+  display: flex;
+  align-items: center;
+}
+
+.bagCount {
+  margin-left: 5px;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 50px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIcon {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.menuLine {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.menuOpen .menuLine:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menuOpen .menuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.menuOpen .menuLine:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.adminLink,
+.profileLink,
+.logoutButton {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.adminLink {
+  color: #ff4500; /* A distinct color for the admin link */
+}
+
+.adminLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.adminLink:hover {
+  text-decoration: underline;
+}
+
+/* Add these styles at the end of the file */
+
+.navLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  margin-left: 20px;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.bagLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.9rem;
+  margin-left: 20px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.bagCount {
+  margin-left: 5px;
+}
+/*reponsive*/
+
+@media (max-width: 768px) {
+  .header {
     height: 50px;
+  }
+
+  .headerWrapper {
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .rightLinks {
+    display: none;
+  }
+
+  .menuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
 }
 
-.searchBar {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 5px;
-    border-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+  }
 }
 
-.searchBar input {
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 200px;
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.searchBar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 16px;
+.mobileMenu.open {
+  display: block;
 }
 
-.userActions {
-    display: flex;
-    align-items: center;
+.mobileMenu .navLink,
+.mobileMenu .bagLink {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.1rem;
 }
 
-.userActions a, .userActions button {
-    margin-right: 20px;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    background: none;
-    border: none;
-    cursor: pointer;
+.searchOverlay {
+  position: absolute;
+  top: 60px; /* Chiều cao của header */
+  left: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  z-index: 999;
 }
 
-.cartLink {
-    display: flex;
-    align-items: center;
-    position: relative;
+.searchButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cartCount {
-    background: red;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 3px 6px;
-    position: absolute;
-    top: -5px;
-    right: -10px;
+.searchButton:hover {
+  opacity: 0.7;
 }
 
-.navBar {
-    display: flex;
-    justify-content: center;
-    background: #333;
-    padding: 10px;
+.searchIcon {
+  width: 24px;
+  height: 24px;
 }
 
-.navBar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 16px;
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.navBar a:hover {
-    background: #555;
-    border-radius: 5px;
+/* Responsive styles */
+@media (max-width: 768px) {
+  .searchOverlay {
+padding: 10px;
+  }
+  
+  .searchButton {
+    padding: 6px;
+  }
+  
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+  }
 }

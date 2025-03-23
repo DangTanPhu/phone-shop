@@ -70,37 +70,6 @@ const HomePage = () => {
           <Link to="/products" className={styles.ctaButton}>Mua Ngay</Link>
         </div>
       </section>
-
-      {/* <section className={styles.categoriesGrid}>
-        <div className={`${styles.categoryItem} ${styles.large}`}>
-          <img src="/assets/1_MENS-BIGWIG.jpg" alt="Bộ Sưu Tập Nam" />
-          <div className={styles.categoryOverlay}>
-            <h2>Bộ Sưu Tập Nam</h2>
-            <Link to="/category/men" className={styles.categoryLink}>Khám Phá</Link>
-          </div>
-        </div>
-        <div className={`${styles.categoryItem} ${styles.medium}`}>
-          <img src="/assets/women.jpg" alt="Bộ Sưu Tập Nữ" />
-          <div className={styles.categoryOverlay}>
-            <h2>Bộ Sưu Tập Nữ</h2>
-            <Link to="/category/women" className={styles.categoryLink}>Khám Phá</Link>
-          </div>
-        </div>
-        <div className={`${styles.categoryItem} ${styles.small}`}>
-          <img src="/assets/3_PRINTABLES.jpg" alt="Áo Thun Họa Tiết" />
-          <div className={styles.categoryOverlay}>
-            <h2>Áo Thun Họa Tiết</h2>
-            <Link to="/category/graphic-tees" className={styles.categoryLink}>Khám Phá</Link>
-          </div>
-        </div>
-        <div className={`${styles.categoryItem} ${styles.small}`}>
-          <img src="/assets/4_SHEPARD_COLLECTION.jpg" alt="Bộ Sưu Tập Shepard Fairey" />
-          <div className={styles.categoryOverlay}>
-            <h2>Bộ Sưu Tập Shepard Fairey</h2>
-            <Link to="/category/shepard-fairey" className={styles.categoryLink}>Khám Phá</Link>
-          </div>
-        </div>
-      </section> */}
        <section className={styles.valueAndNewsSection}>
       <div className={styles.featuredValues}>
         <h2>Giá Trị Nổi Bật</h2>
@@ -126,37 +95,31 @@ const HomePage = () => {
      </section>
 
 
-     <section className={styles.featuredProducts}>
-      <div className={styles.headerSection}>
-        <h2>SẢN PHẨM BÁN CHẠY</h2>
-        <Link to="/products" className={styles.browseAll}>Browse All</Link>
-      </div>
-      <div className={styles.productGrid}>
-        {featuredProducts.map((product) => (
-          <div key={product._id} className={styles.productCard}>
-            <div className={styles.discountBadge}>{product.discount}%</div>
-            <div className={styles.imageContainer}>
-              <img 
-                src={`http://localhost:7070/uploads/${product.image}`} 
-                alt={product.name} 
-                onError={(e) => {
-                  e.target.onerror = null; 
-                  e.target.src = '/images/placeholder-image.jpg';
-                }}
-              />
+      <section className={styles.featuredProducts}>
+        <h2>Sản phẩm nổi bật</h2>
+        <div className={styles.productGrid}>
+          {featuredProducts.map((product) => (
+            <div key={product._id} className={styles.productCard}>
+              <div className={styles.imageContainer}>
+                <img 
+                  src={`http://localhost:7070/uploads/${product.image}`} 
+                  alt={product.name} 
+                  onError={(e) => {
+                    e.target.onerror = null; 
+                    e.target.src = '/images/placeholder-image.jpg';
+                  }}
+                />
+              </div>
+              <h3>{product.name}</h3>
+              <p>{product.price.toLocaleString('vi-VN')} đ</p>
+              <Link to={`/product/${product.slug}`} className={styles.shopButton}>MUA NGAY</Link>
             </div>
-            <p className={styles.category}>{product.category.toUpperCase()}</p>
-            <h3>{product.name}</h3>
-            <p className={styles.originalPrice}>{product.originalPrice.toLocaleString('vi-VN')} VND</p>
-            <p className={styles.discountedPrice}>{product.price.toLocaleString('vi-VN')} VND</p>
-            <Link to={`/product/${product.slug}`} className={styles.shopButton}>MUA NGAY</Link>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
 
       <section className={styles.aboutUs}>
-        <h2>Một câu chuyện hài hước</h2>
+      <h2 styles="color: black;">Một câu chuyện hài hước</h2>
         <div className={styles.storyContent}>
           <div className={styles.storyText}>
             <p>PomDu khởi nguồn là một thương hiệu bán điện thoại nổi tiếng, được thành lập với sứ mệnh mang đến cho người tiêu dùng những sản phẩm công nghệ chất lượng cao và dịch vụ chăm sóc khách hàng tận tâm. 
@@ -192,7 +155,7 @@ const HomePage = () => {
 </div>
   </section>
 
-     
+      
     </div>
   );
 };

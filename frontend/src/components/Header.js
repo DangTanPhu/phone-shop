@@ -16,66 +16,105 @@ const Header = () => {
 
   return (
     <>
-      {/* Thanh trên cùng */}
-      <div className={styles.topBar}>
-        <p>UY TÍN SỐ 1 VN!</p>
-        <div className={styles.socialIcons}>
-          <a href="#"><i className="fa-brands fa-facebook"></i></a>
-          <a href="#"><i className="fa-brands fa-twitter"></i></a>
-          <a href="#"><i className="fa-brands fa-instagram"></i></a>
-          <a href="#"><i className="fa-regular fa-envelope"></i></a>
-        </div>
-      </div>
-
-      {/* Header chính */}
       <header className={styles.header}>
         <div className={styles.headerWrapper}>
-          {/* Logo */}
-          <div className={styles.logoWrapper}>
-            <Link to="/" className={styles.logo}>
-              <img src="/logo.png" alt="Logo UDOSNEAKER" />
-            </Link>
+          <div className={styles.leftSection}>
+            <button 
+              className={styles.menuButton}
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMenuOpen ? (
+                <svg 
+                  className={styles.menuIcon} 
+                  viewBox="0 0 800 800" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="200" y1="200" x2="600" y2="600" strokeWidth="40"/>
+                  <line x1="200" y1="600" x2="600" y2="200" strokeWidth="40"/>
+                </svg>
+              ) : (
+                <svg 
+                  className={styles.menuIcon} 
+                  viewBox="0 0 800 800" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect x="150" y="220" width="500" height="40"/>
+                  <rect x="150" y="380" width="500" height="40"/>
+                  <rect x="150" y="540" width="500" height="40"/>
+                </svg>
+              )}
+            </button>
           </div>
-
-          {/* Thanh tìm kiếm */}
-          <div className={styles.searchBar}>
-            <input type="text" placeholder="Tìm kiếm..." />
-            <button><i className="fa fa-search"></i></button>
+          <div className={styles.centerSection}>
+            <div className={styles.logoWrapper}>
+              <a href="/" className={styles.logo}>
+                <span className={styles.srOnly}>Home</span>
+              </a>
+            </div>
           </div>
-
-          {/* Hành động người dùng */}
-          <div className={styles.userActions}>
-            {user ? (
-              <>
-                <Link to={user.role === 'admin' ? "/admin/profile" : "/user/profile"} className={styles.navLink}>
-                  Thông tin
-                </Link>
-                {user.role === 'admin' && (
-                  <Link to="/admin" className={styles.navLink}>Quản Trị</Link>
-                )}
-                <button onClick={logout} className={styles.navLink}>Đăng Xuất</button>
-              </>
-            ) : (
-              <Link to="/login" className={styles.navLink}>Đăng Nhập</Link>
-            )}
-            <Link to="/cart" className={styles.cartLink}>
-              <i className="fa fa-shopping-bag"></i>
-              <span className={styles.cartCount}>0</span>
-              <span>GIỎ HÀNG / 0 VND</span>
-            </Link>
+          <div className={styles.rightSection}>
+            <button 
+              className={styles.searchButton}
+              onClick={() => setIsSearchOpen(true)}
+              aria-label="Search"
+            >
+              <svg 
+                className={styles.searchIcon} 
+                width="24" 
+                height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+                <path 
+                  d="M21 21L16.65 16.65" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round"
+strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <div className={styles.rightLinks}>
+              {user ? (
+                <>
+                  <Link to={user.role === 'admin' ? "/admin/profile" : "/user/profile"} className={styles.navLink}>
+                    Thông tin
+                  </Link>
+                  {user.role === 'admin' && (
+                    <Link to="/admin" className={styles.navLink}>
+                      Quản Trị
+                    </Link>
+                  )}
+                  <button onClick={logout} className={styles.navLink}>
+                    Đăng Xuất
+                  </button>
+                </>
+              ) : (
+                <Link to="/login" className={styles.navLink}>Đăng Nhập</Link>
+              )}
+              <Link to="/cart" className={styles.bagLink}>
+                Giỏ Hàng <span className={styles.bagCount}></span>
+              </Link>
+            </div>
           </div>
         </div>
+
+        {isSearchOpen && (
+          <div className={styles.searchOverlay}>
+            <SearchBar onClose={() => setIsSearchOpen(false)} />
+          </div>
+        )}
       </header>
-
-      {/* Thanh menu */}
-      <nav className={styles.navBar}>
-        <Link to="/">TRANG CHỦ</Link>
-        <Link to="/products">SẢN PHẨM</Link>
-        <Link to="/about">GIỚI THIỆU</Link>
-        <Link to="/news">TIN TỨC</Link>
-      </nav>
-
-      {isSearchOpen && <SearchBar onClose={() => setIsSearchOpen(false)} />}
+      
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );

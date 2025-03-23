@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { getAdminUsers, toggleAdminUserStatus, changeUserRole ,addUser, updateUser} from '../services/api';
+import { getAdminUsers, toggleAdminUserStatus, changeUserRole ,addUser, updateUser,deleteUser} from '../services/api';
 import { useAuth } from '../contexts/AuthContext';
 import { FaSearch, FaSort, FaLock, FaLockOpen } from 'react-icons/fa';
 import styles from './style.component/UserManagement.module.css';
 import { toast } from 'react-toastify';
+
 
 const StatusBadge = ({ isActive, isLocked }) => {
   const getStatusInfo = () => {
@@ -43,7 +44,11 @@ const UserManagement = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(10);
   const { user, user: currentUser } = useAuth();
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [newUser, setNewUser] = useState({ username: '', email: '', password: '', role: 'user' });
+  
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editUser, setEditUser] = useState(null);
   useEffect(() => {
     if (user && user.role === 'admin') {
       fetchUsers();

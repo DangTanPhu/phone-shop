@@ -1,8 +1,10 @@
 /* eslint-disable unicode-bom */
 import axios from 'axios';
 
-const API_URL = 'http://localhost:7070/api'; // Đảm bảo port này khớp với port của backend
-
+const API_URL = 'http://localhost:5000/api'; // Đảm bảo port này khớp với port của backend
+axios.get("API_URL", {
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+});
 // Tạo một instance của axios với cấu hình mặc định
 const api = axios.create({
   baseURL: `${process.env.REACT_APP_API_URL}/api`,
@@ -39,7 +41,32 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
+export const addUser = async (userData) => {
+  try {
+    const response = await api.post('/admin/users', userData);
+    return response.data;
+  } catch (error) {
+    console.error('Error adding user:', error.response?.data || error.message);
+    throw error;
+  }
+};
+export const updateUser = async (userId, userData) => {
+  try {
+    const response = await api.put(`/admin/users/${userId}`, userData);
+    return response.data;
+  } catch (error) {
+    console.error('Error updating user:', error.response?.data || error.message);
+    throw error;
+  }
+};
+export const deleteUser = async (userId) => {
+  try {
+    const response = await axios.delete(`/api/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 // Danh sách c c endpoint không cần xác thực
 const publicEndpoints = ['/products', '/categories', '/products/categories'];
 

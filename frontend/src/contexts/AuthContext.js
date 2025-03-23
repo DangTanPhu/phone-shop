@@ -45,12 +45,19 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (userData) => {
-    setUser(userData);
-    if (userData.token) {
-      localStorage.setItem('token', userData.token);
-      localStorage.setItem('user', JSON.stringify(userData));
-      setAuthToken(userData.token);
-      await fetchUserProfile(); // Fetch user profile after login
+    try {
+      if (userData.token) {
+        localStorage.setItem('token', userData.token);
+        localStorage.setItem('user', JSON.stringify(userData));
+        setAuthToken(userData.token);
+  
+        // Gọi API lấy thông tin user để đảm bảo đúng thông tin
+        const userProfile = await fetchUserProfile();
+        setUser(userProfile);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      throw new Error("Login failed");
     }
   };
 

@@ -1,769 +1,737 @@
 .homePage {
-    display: flex;
-    flex-direction: column;
-    background-color: #F5FFFA		;
-  }
-  
-  .headerSpacer {
-    height: 60px;
-    width: 100%;
-  }
-  
-  .heroSection {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .heroVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Ensure the video fills the container while maintaining its aspect ratio */
-  }
-  
-  .heroOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-  }
-  
-  .ctaButton {
-    padding: 15px 30px;
-    background-color: black;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-  
-  .ctaButton:hover {
-    background-color: white;
-    color: black;
-  }
-  
-  .categoriesGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .categoryItem {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .categoryItem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .categoryItem:hover img {
-    transform: scale(1.05);
-  }
-  
-  .categoryOverlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 3rem 2rem;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .categoryOverlay h2 {
-    color: #fff;
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .categoryLink {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    padding-bottom: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .categoryLink::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #fff;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-  
-  .categoryLink:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  
-  /* Kích thước cho từng loại grid */
-  .large .categoryOverlay h2 {
-    font-size: 2.2rem;
-  }
-  
-  .medium .categoryOverlay h2 {
-    font-size: 1.8rem;
-  }
-  
-  .small .categoryOverlay h2 {
-    font-size: 1.5rem;
-  }
-  
-  .large {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  
-  .medium {
-    grid-column: span 2;
-  }
-  
-  .small {
-    grid-column: span 1;
-  }
-  
-  
-  .featuredProducts {
-    width: 100%;
-    padding: 20px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .headerSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    margin-bottom: 15px;
-  }
-  
-  .headerSection h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .browseAll {
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .browseAll:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff		;
+}
+
+.headerSpacer {
+  height: 60px;
+  width: 100%;
+}
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensure the video fills the container while maintaining its aspect ratio */
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.ctaButton {
+  padding: 15px 30px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.categoryItem {
+  position: relative;
+  overflow: hidden;
+}
+
+.categoryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.categoryItem:hover img {
+  transform: scale(1.05);
+}
+
+.categoryOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.categoryOverlay h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.categoryLink {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.categoryLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.categoryLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Kích thước cho từng loại grid */
+.large .categoryOverlay h2 {
+  font-size: 2.2rem;
+}
+
+.medium .categoryOverlay h2 {
+  font-size: 1.8rem;
+}
+
+.small .categoryOverlay h2 {
+  font-size: 1.5rem;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.medium {
+  grid-column: span 2;
+}
+
+.small {
+  grid-column: span 1;
+}
+
+.featuredProducts {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.featuredProducts h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#000;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.imageContainer {
+  width: 100%;
+  padding-top: 100%; /* Tạo tỷ lệ khung hình 1:1 */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.productCard img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh lấp đầy container mà không bị méo */
+  border-radius: 4px;
+}
+
+.productCard h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  height: 2.4em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.productCard p {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.shopButton {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.shopButton:hover {
+  background-color: #333;
+}
+
+@media (max-width: 1024px) {
   .productGrid {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
   }
-  
-  .productCard {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    position: relative;
+}
+
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .productCard:hover {
-    transform: translateY(-5px);
-  }
-  
-  .discountBadge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #ff5722;
-    color: white;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 50px;
-  }
-  
-  .imageContainer {
-    width: 100%;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .imageContainer img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .category {
-    font-size: 12px;
-    color: #777;
-    margin: 5px 0;
-    text-transform: uppercase;
-  }
-  
-  h3 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin: 5px 0;
-  }
-  
-  .originalPrice {
-    font-size: 14px;
-    text-decoration: line-through;
-    color: #999;
-  }
-  
-  .discountedPrice {
-    font-size: 16px;
-    font-weight: bold;
-    color: #d32f2f;
-  }
-  
-  .shopButton {
-    display: block;
-    text-align: center;
-    background: #007bff;
-    color: white;
-    padding: 8px 0;
-    margin-top: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .shopButton:hover {
-    background: #0056b3;
-  }
-    
-  
-  @media (max-width: 1024px) {
-    .productGrid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .productGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .lookbookGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .productGrid {
-      grid-template-columns: 1fr;
-    }
-  
-    .lookbookGrid {
-      grid-template-columns: 1fr;
-    }
-  
-    .obeyLookbook{
-      padding: 30px 10px;
-    }
-  }
-  
-  .aboutUs,
-  .instagramFeed {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .productCarousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-  }
-  
-  .productCard {
-    flex: 0 0 auto;
-    width: 250px;
-    text-align: center;
-  }
-  
-  .productCard img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .shopButton,
-  .learnMoreButton,
-  .followButton,
-  .exploreButton {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .shopButton:hover,
-  .learnMoreButton:hover,
-  .followButton:hover,
-  .exploreButton:hover {
-    background-color: #333;
-  }
-  
-  .storyContent {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
-  
-  .storyText {
-    flex: 1;
-  }
-  
-  .storyImage {
-    flex: 1;
-  }
-  
-  .storyImage img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .instagramGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .instagramPost img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-  
-  .instagramPost:hover img {
-    transform: scale(1.05);
-  }
-  
-  .obeyAwareness {
-    background-color: #f4f4f4;
-    text-align: center;
-  }
-  .obeyLookbook,
-  .obeyAwareness {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+
   .lookbookGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 480px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .lookbookGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .obeyLookbook{
+    padding: 30px 10px;
+  }
+}
+
+.aboutUs,
+.instagramFeed {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productCarousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.productCard {
+  flex: 0 0 auto;
+  width: 250px;
+  text-align: center;
+}
+
+.productCard img {
+  width: 100%;
+  height: auto;
+}
+
+.shopButton,
+.learnMoreButton,
+.followButton,
+.exploreButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.shopButton:hover,
+.learnMoreButton:hover,
+.followButton:hover,
+.exploreButton:hover {
+  background-color: #333;
+}
+
+.storyContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.storyText {
+  flex: 1;
+}
+
+.storyImage {
+  flex: 1;
+}
+
+.storyImage img {
+  width: 100%;
+  height: auto;
+}
+
+.instagramGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.aboutUs{
+  color:#000;
+}
+.instagramPost img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.instagramPost:hover img {
+  transform: scale(1.05);
+}
+
+.obeyAwareness {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+.obeyLookbook,
+.obeyAwareness {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lookbookGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.lookbookItem {
+  position: relative;
+  overflow: hidden;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Điều chỉnh khoảng cách giữa lưới ảnh và nút */
+}
+.lookbookItem img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.lookbookItem:hover img {
+  transform: scale(1.05);
+}
+
+.viewLookbookButton,
+.exploreButton {
+  display: inline-block;
   
-  .lookbookItem {
-    position: relative;
-    overflow: hidden;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.viewLookbookButton:hover,
+.exploreButton:hover {
+  background-color: #333;
+}
+
+.obeyAwareness {
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.awarenessContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .lookbookGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .buttonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* Điều chỉnh khoảng cách giữa lưới ảnh và nút */
+}
+
+.glitchSlogan {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: block;
+  font-size: 5em;
+  font-weight: 900;
+  letter-spacing: 10px;
+  transform: skew(-5deg);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.brand::before,
+.brand::after {
+  content: 'PomDu';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.brand::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.brand::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.sloganContainer {
+  position: relative;
+  height: auto;
+  overflow: visible;
+}
+
+.sloganText {
+  display: block;
+  font-size: 1.8em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
   }
-  .lookbookItem img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+  5% {
+    clip: rect(12px, 9999px, 59px, 0);
   }
-  
-  .lookbookItem:hover img {
-    transform: scale(1.05);
+  10% {
+    clip: rect(48px, 9999px, 29px, 0);
   }
-  
-  .viewLookbookButton,
-  .exploreButton {
-    display: inline-block;
-    
-    padding: 12px 24px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  15% {
+    clip: rect(42px, 9999px, 73px, 0);
   }
-  
-  .viewLookbookButton:hover,
-  .exploreButton:hover {
-    background-color: #333;
+  20% {
+    clip: rect(63px, 9999px, 27px, 0);
   }
-  
-  .obeyAwareness {
-    background-color: #f4f4f4;
-    text-align: center;
+  25% {
+    clip: rect(34px, 9999px, 55px, 0);
   }
-  
-  .awarenessContent {
-    max-width: 800px;
-    margin: 0 auto;
+  30% {
+    clip: rect(86px, 9999px, 73px, 0);
   }
-  
-  @media (max-width: 768px) {
-    .lookbookGrid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  35% {
+    clip: rect(20px, 9999px, 20px, 0);
   }
-  
-  .glitchSlogan {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: visible;
-    margin-bottom: 20px;
+  40% {
+    clip: rect(26px, 9999px, 60px, 0);
   }
-  
-  .brand {
-    display: block;
-    font-size: 5em;
-    font-weight: 900;
-    letter-spacing: 10px;
-    transform: skew(-5deg);
-    margin-bottom: 20px;
-    position: relative;
+  45% {
+    clip: rect(25px, 9999px, 66px, 0);
   }
-  
-  .brand::before,
-  .brand::after {
-    content: 'PomDu';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  50% {
+    clip: rect(57px, 9999px, 98px, 0);
+  }
+  55% {
+    clip: rect(5px, 9999px, 46px, 0);
+  }
+  60% {
+    clip: rect(82px, 9999px, 31px, 0);
+  }
+  65% {
+    clip: rect(54px, 9999px, 27px, 0);
+  }
+  70% {
+    clip: rect(28px, 9999px, 99px, 0);
+  }
+  75% {
+    clip: rect(45px, 9999px, 69px, 0);
+  }
+  80% {
+    clip: rect(23px, 9999px, 85px, 0);
+  }
+  85% {
+    clip: rect(54px, 9999px, 84px, 0);
+  }
+  90% {
+    clip: rect(45px, 9999px, 47px, 0);
+  }
+  95% {
+    clip: rect(37px, 9999px, 20px, 0);
+  }
+  100% {
+    clip: rect(4px, 9999px, 91px, 0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroOverlay {
+    padding: 0 15px;
+  }
+
+  .heroVideo {
+    /* You can adjust the height based on screen size if needed */
     height: 100%;
-  }
-  
-  .brand::before {
-    left: 2px;
-    text-shadow: -2px 0 #ff00c1;
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim 3s infinite linear alternate-reverse;
-  }
-  
-  .brand::after {
-    left: -2px;
-    text-shadow: -2px 0 #00fff9;
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim 2s infinite linear alternate-reverse;
-  }
-  
-  .sloganContainer {
-    position: relative;
-    height: auto;
-    overflow: visible;
-  }
-  
-  .sloganText {
-    display: block;
-    font-size: 1.8em;
-    line-height: 1.2;
-    margin-bottom: 10px;
-  }
-  
-  @keyframes glitch-anim {
-    0% {
-      clip: rect(42px, 9999px, 44px, 0);
-    }
-    5% {
-      clip: rect(12px, 9999px, 59px, 0);
-    }
-    10% {
-      clip: rect(48px, 9999px, 29px, 0);
-    }
-    15% {
-      clip: rect(42px, 9999px, 73px, 0);
-    }
-    20% {
-      clip: rect(63px, 9999px, 27px, 0);
-    }
-    25% {
-      clip: rect(34px, 9999px, 55px, 0);
-    }
-    30% {
-      clip: rect(86px, 9999px, 73px, 0);
-    }
-    35% {
-      clip: rect(20px, 9999px, 20px, 0);
-    }
-    40% {
-      clip: rect(26px, 9999px, 60px, 0);
-    }
-    45% {
-      clip: rect(25px, 9999px, 66px, 0);
-    }
-    50% {
-      clip: rect(57px, 9999px, 98px, 0);
-    }
-    55% {
-      clip: rect(5px, 9999px, 46px, 0);
-    }
-    60% {
-      clip: rect(82px, 9999px, 31px, 0);
-    }
-    65% {
-      clip: rect(54px, 9999px, 27px, 0);
-    }
-    70% {
-      clip: rect(28px, 9999px, 99px, 0);
-    }
-    75% {
-      clip: rect(45px, 9999px, 69px, 0);
-    }
-    80% {
-      clip: rect(23px, 9999px, 85px, 0);
-    }
-    85% {
-      clip: rect(54px, 9999px, 84px, 0);
-    }
-    90% {
-      clip: rect(45px, 9999px, 47px, 0);
-    }
-    95% {
-      clip: rect(37px, 9999px, 20px, 0);
-    }
-    100% {
-      clip: rect(4px, 9999px, 91px, 0);
-    }
-  }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @media (max-width: 1024px) {
-    .heroOverlay {
-      padding: 0 15px;
-    }
-
-    .heroVideo {
-      /* You can adjust the height based on screen size if needed */
-      height: 100%;
-      width: 100%;
-    }
-  
-    .glitchSlogan {
-      font-size: 2.5em; /* Adjust font size for tablets */
-    }
-  
-    .brand {
-      font-size: 3.5em; /* Adjust brand size */
-      letter-spacing: 5px; /* Adjust spacing */
-    }
-  
-    .ctaButton {
-      font-size: 1rem;
-      padding: 12px 25px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .glitchSlogan {
-      font-size: 2em; /* Adjust font size for smaller screens */
-    }
-
-    .heroVideo {
-      height: 100%;
-      width: 100%;
-    }
-  
-    .brand {
-      font-size: 3em;
-      letter-spacing: 5px;
-    }
-  
-    .sloganText {
-      font-size: 1.4em;
-    }
-  
-    .ctaButton {
-      font-size: 0.9rem;
-      padding: 10px 20px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .glitchSlogan {
-      font-size: 1.5em; /* Adjust font size for mobile */
-    }
-
-    .heroVideo {
-      height: 100%;
-      width: 100%;
-    }
-  
-    .brand {
-      font-size: 2.5em;
-      letter-spacing: 3px;
-    }
-  
-    .sloganText {
-      font-size: 1.2em;
-    }
-  
-    .ctaButton {
-      font-size: 0.8rem;
-      padding: 8px 15px;
-    }
-  }
-  /* new*/
-  .valueAndNewsSection {
-    margin: 50px 0;
-  }
-  
-  /* Giá Trị Nổi Bật */
-  .featuredValues {
-    background-color: #e9f8fe; /* Màu xanh nhạt giống hình */
-    padding: 40px 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    margin-left:100px;
-    margin-right: 100px;
-    margin-top:10px;
-  }
-  
-  .featuredValues h2 {
-    font-size: 28px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 30px;
-  }
-  
-  .valuesGrid {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .valueItem {
-    text-align: center;
-    width: 20%;
-  }
-  
-  .valueItem img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .valueItem p {
-    font-size: 14px;
-    color: #555;
-    margin: 0;
-    line-height: 1.5;
-  }
-  
-  /* Latest News */
-  .latestNews {
-    padding: 40px 20px;
-    margin-left :100px;
-    margin-right :100px;
-    margin-top:10px;
-    margin-right: 100px;
-  }
-  
-  .latestNews h2 {
-    font-size: 28px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .newsGrid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .newsItem {
-    width: 30%;
-    text-align: center;
-  }
-
-  .newsItem img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0px;
   }
-  .newsItem a {
-    color:black;
-    text-decoration: none;
+
+  .glitchSlogan {
+    font-size: 2.5em; /* Adjust font size for tablets */
   }
-  .newsItem h3 {
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-decoration: none;
+
+  .brand {
+    font-size: 3.5em; /* Adjust brand size */
+    letter-spacing: 5px; /* Adjust spacing */
   }
-  
-  .newsItem p {
-    font-size: 14px;
-    color: #777;
-    line-height: 1.5;
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 12px 25px;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .glitchSlogan {
+    font-size: 2em; /* Adjust font size for smaller screens */
+  }
+
+  .heroVideo {
+    height: 100%;
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 3em;
+    letter-spacing: 5px;
+  }
+
+  .sloganText {
+    font-size: 1.4em;
+  }
+
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitchSlogan {
+    font-size: 1.5em; /* Adjust font size for mobile */
+  }
+
+  .heroVideo {
+    height: 100%;
+    width: 100%;
+  }
+
+  .brand {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+  }
+
+  .sloganText {
+    font-size: 1.2em;
+  }
+
+  .ctaButton {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+}
+/* new*/
+.valueAndNewsSection {
+  margin: 50px 0;
+}
+
+/* Giá Trị Nổi Bật */
+.featuredValues {
+  background-color: #f1efef; /* Màu xanh nhạt giống hình */
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  margin-left:100px;
+  margin-right: 100px;
+  margin-top:10px;
+}
+
+.featuredValues h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.valuesGrid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.valueItem {
+  text-align: center;
+  width: 20%;
+}
+
+.valueItem img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.valueItem p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Latest News */
+.latestNews {
+  padding: 40px 20px;
+  margin-left :100px;
+  margin-right :100px;
+  margin-top:10px;
+  margin-right: 100px;
+}
+.h2{
+  color: #000;
+}
+.latestNews h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.newsGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.newsItem {
+  width: 30%;
+  text-align: center;
+}
+
+.newsItem img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0px;
+}
+.newsItem a {
+  color:black;
+  text-decoration: none;
+}
+.newsItem h3 {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.newsItem p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+}
+
 
